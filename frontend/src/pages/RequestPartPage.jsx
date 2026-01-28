@@ -82,13 +82,7 @@ const RequestPartPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validation
-    if (!formData.full_name || !formData.email || !formData.phone ||
-        !formData.car_brand || !formData.car_model || !formData.car_year ||
-        !formData.part_type) {
-      toast.error("Por favor preencha todos os campos obrigatórios");
-      return;
-    }
+    // No validation - all fields optional
 
     setLoading(true);
 
@@ -190,7 +184,7 @@ const RequestPartPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <Label className="text-sm font-medium text-neutral-300 mb-2 block">
-                  Nome Completo *
+                  Nome Completo
                 </Label>
                 <Input
                   name="full_name"
@@ -199,13 +193,12 @@ const RequestPartPage = () => {
                   onChange={handleInputChange}
                   className="bg-[#0A0A0A] border-neutral-800 text-white placeholder:text-neutral-600 focus:border-red-600 rounded-sm h-12"
                   data-testid="input-full-name"
-                  required
                 />
               </div>
               
               <div>
                 <Label className="text-sm font-medium text-neutral-300 mb-2 block">
-                  Email *
+                  Email
                 </Label>
                 <Input
                   type="email"
@@ -215,13 +208,12 @@ const RequestPartPage = () => {
                   onChange={handleInputChange}
                   className="bg-[#0A0A0A] border-neutral-800 text-white placeholder:text-neutral-600 focus:border-red-600 rounded-sm h-12"
                   data-testid="input-email"
-                  required
                 />
               </div>
               
               <div className="md:col-span-2">
                 <Label className="text-sm font-medium text-neutral-300 mb-2 block">
-                  Telefone *
+                  Telefone
                 </Label>
                 <Input
                   type="tel"
@@ -231,7 +223,6 @@ const RequestPartPage = () => {
                   onChange={handleInputChange}
                   className="bg-[#0A0A0A] border-neutral-800 text-white placeholder:text-neutral-600 focus:border-red-600 rounded-sm h-12"
                   data-testid="input-phone"
-                  required
                 />
               </div>
             </div>
@@ -249,7 +240,7 @@ const RequestPartPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <Label className="text-sm font-medium text-neutral-300 mb-2 block">
-                  Marca *
+                  Marca
                 </Label>
                 <Select 
                   value={formData.car_brand} 
@@ -271,7 +262,7 @@ const RequestPartPage = () => {
               
               <div>
                 <Label className="text-sm font-medium text-neutral-300 mb-2 block">
-                  Modelo *
+                  Modelo
                 </Label>
                 <Input
                   name="car_model"
@@ -280,13 +271,12 @@ const RequestPartPage = () => {
                   onChange={handleInputChange}
                   className="bg-[#0A0A0A] border-neutral-800 text-white placeholder:text-neutral-600 focus:border-red-600 rounded-sm h-12"
                   data-testid="input-car-model"
-                  required
                 />
               </div>
               
               <div>
                 <Label className="text-sm font-medium text-neutral-300 mb-2 block">
-                  Ano *
+                  Ano
                 </Label>
                 <Input
                   name="car_year"
@@ -295,7 +285,6 @@ const RequestPartPage = () => {
                   onChange={handleInputChange}
                   className="bg-[#0A0A0A] border-neutral-800 text-white placeholder:text-neutral-600 focus:border-red-600 rounded-sm h-12"
                   data-testid="input-car-year"
-                  required
                 />
               </div>
               
@@ -327,7 +316,7 @@ const RequestPartPage = () => {
             <div className="space-y-6">
               <div>
                 <Label className="text-sm font-medium text-neutral-300 mb-2 block">
-                  Tipo de Peça *
+                  Tipo de Peça
                 </Label>
                 <Select 
                   value={formData.part_type} 
@@ -349,7 +338,7 @@ const RequestPartPage = () => {
               
               <div>
                 <Label className="text-sm font-medium text-neutral-300 mb-3 block">
-                  Estado da Peça *
+                  Estado da Peça
                 </Label>
                 <RadioGroup 
                   value={formData.part_condition}
