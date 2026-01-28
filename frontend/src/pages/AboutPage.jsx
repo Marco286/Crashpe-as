@@ -34,8 +34,8 @@ const AboutPage = () => {
             {/* Image */}
             <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-neutral-800">
               <img
-                src="https://images.unsplash.com/photo-1767339736247-582fcf11442b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHw0fHxjYXIlMjBlbmdpbmUlMjBtZWNoYW5pYyUyMHdvcmtzaG9wfGVufDB8fHx8MTc2OTU2OTE0N3ww&ixlib=rb-4.1.0&q=85"
-                alt="Equipa CrashPeças"
+                src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/w9vmtxiy_Padra%CC%83o%20de%20Fundo%20da%20Galeria%20de%20Fotografias%20do%20Windows%20Live.jpg"
+                alt="Instalações CrashPeças"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
