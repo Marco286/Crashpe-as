@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Wrench } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -29,17 +29,14 @@ const Navbar = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center gap-3 group"
+            className="flex items-center group"
             data-testid="logo-link"
           >
-            <div className="w-10 h-10 bg-red-600 rounded-sm flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-              <Wrench className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <span className="text-xl font-black text-white uppercase tracking-tight" style={{ fontFamily: 'Chivo, sans-serif' }}>
-                Crash<span className="text-red-600">Peças</span>
-              </span>
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/6qoqwf5j_logo%20cras...jpg" 
+              alt="CrashPeças Logo"
+              className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation */}

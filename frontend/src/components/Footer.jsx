@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Wrench, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -11,16 +11,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Logo & Description */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-red-600 rounded-sm flex items-center justify-center">
-                <Wrench className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-black text-white uppercase tracking-tight" style={{ fontFamily: 'Chivo, sans-serif' }}>
-                Crash<span className="text-red-600">Peças</span>
-              </span>
+            <Link to="/" className="inline-block mb-6">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/6qoqwf5j_logo%20cras...jpg" 
+                alt="CrashPeças Logo"
+                className="h-16 w-auto"
+              />
             </Link>
             <p className="text-neutral-400 text-sm leading-relaxed">
-              A sua solução em peças automóveis. Qualidade, confiança e rapidez em cada peça.
+              Importação - Exportação de Carros e Peças Usadas. Qualidade, confiança e rapidez.
             </p>
           </div>
 
