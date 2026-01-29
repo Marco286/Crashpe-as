@@ -67,14 +67,14 @@ const ContactPage = () => {
     {
       icon: MapPin,
       title: "Morada",
-      content: "Palmela, Portugal",
-      link: "https://maps.google.com/?q=Palmela,Portugal"
+      content: "Rua Marquês de Pombal, 2950-693 Olhos de Água",
+      link: "https://maps.google.com/?q=Rua+Marquês+de+Pombal,+Olhos+de+Água,+Portugal"
     },
     {
       icon: Phone,
-      title: "Telefone",
-      content: "+351 912 345 678",
-      link: "tel:+351912345678"
+      title: "Telefones",
+      content: "21 213 1390 | 937 257 079",
+      link: "tel:+351937257079"
     },
     {
       icon: Mail,
@@ -155,7 +155,7 @@ const ContactPage = () => {
             {/* Map */}
             <div className="bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99636.69445097762!2d-8.957096999999999!3d38.5669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194f73c5b9b1e5%3A0x400ebbde4902b00!2sPalmela!5e0!3m2!1spt-PT!2spt!4v1700000000000!5m2!1spt-PT!2spt"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12458.123456789!2d-8.9!3d38.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua%20Marqu%C3%AAs%20de%20Pombal%2C%20Olhos%20de%20%C3%81gua!5e0!3m2!1spt-PT!2spt!4v1700000000000!5m2!1spt-PT!2spt"
                 width="100%"
                 height="350"
                 style={{ border: 0 }}

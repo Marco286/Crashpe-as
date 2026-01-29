@@ -81,18 +81,27 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                 <span className="text-neutral-400 text-sm">
-                  Palmela, Portugal
+                  Rua Marquês de Pombal<br />2950-693 Olhos de Água
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-red-600 flex-shrink-0" />
-                <a 
-                  href="tel:+351912345678" 
-                  className="text-neutral-400 hover:text-white transition-colors text-sm"
-                  data-testid="footer-phone"
-                >
-                  +351 912 345 678
-                </a>
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                <div className="text-sm">
+                  <a 
+                    href="tel:+351212131390" 
+                    className="text-neutral-400 hover:text-white transition-colors block"
+                    data-testid="footer-phone-1"
+                  >
+                    21 213 1390
+                  </a>
+                  <a 
+                    href="tel:+351937257079" 
+                    className="text-neutral-400 hover:text-white transition-colors block"
+                    data-testid="footer-phone-2"
+                  >
+                    937 257 079
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-red-600 flex-shrink-0" />
