@@ -155,9 +155,9 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: Award, number: "10+", label: "Anos de Experiência" },
+              { icon: Award, number: "20+", label: "Anos de Experiência" },
               { icon: Users, number: "5000+", label: "Clientes Satisfeitos" },
-              { icon: Clock, number: "24h", label: "Resposta Rápida" },
+              { icon: Clock, number: "12h", label: "Resposta Rápida" },
               { icon: Target, number: "98%", label: "Taxa de Sucesso" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
