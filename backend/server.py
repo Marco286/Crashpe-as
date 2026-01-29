@@ -34,7 +34,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # WhatsApp number for the business
-WHATSAPP_NUMBER = "351912345678"  # Replace with actual number
+WHATSAPP_NUMBER = "351937257079"  # CrashPeças
 
 # ============== Models ==============
 
