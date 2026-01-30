@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <nav 
-      className="fixed top-0 w-full z-50 bg-[#0A0A0A]/80 backdrop-blur-md border-b border-neutral-800"
+      className="fixed top-0 w-full z-50 bg-black border-b border-neutral-800"
       data-testid="navbar"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">

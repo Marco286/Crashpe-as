@@ -71,9 +71,6 @@ const HomePage = () => {
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center pt-20">
           <div className="animate-fade-in">
-            <span className="inline-block text-red-600 font-bold uppercase tracking-widest text-sm mb-6">
-              Peças Automóveis em Palmela
-            </span>
             <h1 
               className="text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tight mb-6"
               style={{ fontFamily: 'Chivo, sans-serif' }}
