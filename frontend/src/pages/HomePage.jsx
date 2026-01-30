@@ -61,8 +61,8 @@ const HomePage = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1615906655593-ad0386982a0f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwxfHxjYXIlMjBlbmdpbmUlMjBtZWNoYW5pYyUyMHdvcmtzaG9wfGVufDB8fHx8MTc2OTU2OTE0N3ww&ixlib=rb-4.1.0&q=85"
-            alt="CrashPeças Workshop"
+            src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/iwbt9m74_IMG_0171.JPG"
+            alt="CrashPeças Instalações"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-[#0A0A0A]" />
@@ -314,7 +314,7 @@ const HomePage = () => {
               <div className="flex bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors">
                 <div className="w-1/3 min-h-[200px]">
                   <img 
-                    src="https://images.unsplash.com/photo-1611826249213-35c55d2c2a81?crop=entropy&cs=srgb&fm=jpg&w=800" 
+                    src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/lwn0c6su_IMG_3296.HEIC" 
                     alt="Rodas e Pneus"
                     className="w-full h-full object-cover"
                   />

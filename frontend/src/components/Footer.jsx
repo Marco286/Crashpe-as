@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
               <img 
-                src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/6qoqwf5j_logo%20cras...jpg" 
+                src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/dapp11bf_Captura%20de%20ecra%CC%83%202026-01-30%2C%20a%CC%80s%2017.55.26.png" 
                 alt="CrashPeças Logo"
                 className="h-16 w-auto"
               />
