@@ -158,35 +158,186 @@ const HomePage = () => {
           </div>
 
           {loading ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[...Array(6)].map((_, i) => (
-                <div key={i} className="aspect-square bg-neutral-800 animate-pulse rounded-sm" />
+                <div key={i} className="h-64 bg-neutral-800 animate-pulse rounded-sm" />
               ))}
             </div>
           ) : (
-            <div className="bento-grid">
-              {categories.slice(0, 6).map((category, index) => (
-                <CategoryCard 
-                  key={category.id} 
-                  category={category}
-                  className={index === 0 ? "bento-large" : index === 3 ? "bento-wide" : ""}
-                />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Carroçaria */}
+              <div className="flex bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors">
+                <div className="w-1/3 min-h-[200px]">
+                  <img 
+                    src="https://images.pexels.com/photos/17539732/pexels-photo-17539732.jpeg" 
+                    alt="Carroçaria"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-2/3 p-6">
+                  <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Chivo, sans-serif' }}>
+                    Carroçaria
+                  </h3>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-neutral-400 mb-6">
+                    <span>Portas</span>
+                    <span>Pára-Choques</span>
+                    <span>Malas</span>
+                    <span>Grelhas</span>
+                    <span>Capôs</span>
+                    <span>Vidros/Pára-Brisas</span>
+                  </div>
+                  <Link to="/solicitar">
+                    <Button variant="outline" className="border-neutral-600 text-white hover:border-white hover:bg-white/5 rounded-sm text-sm">
+                      Saiba Mais <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Mecânica */}
+              <div className="flex bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors">
+                <div className="w-1/3 min-h-[200px]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1655103955791-aae53be125c6?crop=entropy&cs=srgb&fm=jpg&w=800" 
+                    alt="Mecânica"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-2/3 p-6">
+                  <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Chivo, sans-serif' }}>
+                    Mecânica
+                  </h3>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-neutral-400 mb-6">
+                    <span>Motores</span>
+                    <span>Kit Embraiagem</span>
+                    <span>Caixas de Velocidades</span>
+                    <span>Mangas de Eixo</span>
+                    <span>Transmissões</span>
+                    <span>Amortecedores</span>
+                  </div>
+                  <Link to="/solicitar">
+                    <Button variant="outline" className="border-neutral-600 text-white hover:border-white hover:bg-white/5 rounded-sm text-sm">
+                      Saiba Mais <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Sistema Elétrico */}
+              <div className="flex bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors">
+                <div className="w-1/3 min-h-[200px]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1767990495521-95cceb571125?crop=entropy&cs=srgb&fm=jpg&w=800" 
+                    alt="Sistema Elétrico"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-2/3 p-6">
+                  <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Chivo, sans-serif' }}>
+                    Sistema Elétrico
+                  </h3>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-neutral-400 mb-6">
+                    <span>Alternadores</span>
+                    <span>Quadrantes</span>
+                    <span>Motores de Arranque</span>
+                    <span>Sensores</span>
+                    <span>Baterias</span>
+                    <span>Bobines</span>
+                  </div>
+                  <Link to="/solicitar">
+                    <Button variant="outline" className="border-neutral-600 text-white hover:border-white hover:bg-white/5 rounded-sm text-sm">
+                      Saiba Mais <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Iluminação */}
+              <div className="flex bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors">
+                <div className="w-1/3 min-h-[200px]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?crop=entropy&cs=srgb&fm=jpg&w=800" 
+                    alt="Iluminação"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-2/3 p-6">
+                  <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Chivo, sans-serif' }}>
+                    Iluminação
+                  </h3>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-neutral-400 mb-6">
+                    <span>Faróis</span>
+                    <span>Luzes de Nevoeiro</span>
+                    <span>Farolins</span>
+                    <span>Luzes de Travagem</span>
+                    <span>Balastros de Xénon</span>
+                    <span>Lâmpadas</span>
+                  </div>
+                  <Link to="/solicitar">
+                    <Button variant="outline" className="border-neutral-600 text-white hover:border-white hover:bg-white/5 rounded-sm text-sm">
+                      Saiba Mais <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Airbags */}
+              <div className="flex bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors">
+                <div className="w-1/3 min-h-[200px]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1601368705259-87b80da6fa0c?crop=entropy&cs=srgb&fm=jpg&w=800" 
+                    alt="Airbags"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-2/3 p-6">
+                  <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Chivo, sans-serif' }}>
+                    Airbags
+                  </h3>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-neutral-400 mb-6">
+                    <span>Centralinas</span>
+                    <span>Coberturas de Tablier</span>
+                    <span>Módulos de Airbag</span>
+                    <span>Bancos com Airbag</span>
+                    <span>Sensores de Impacto</span>
+                    <span>Cintos com Airbag</span>
+                  </div>
+                  <Link to="/solicitar">
+                    <Button variant="outline" className="border-neutral-600 text-white hover:border-white hover:bg-white/5 rounded-sm text-sm">
+                      Saiba Mais <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Rodas e Pneus */}
+              <div className="flex bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors">
+                <div className="w-1/3 min-h-[200px]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1611826249213-35c55d2c2a81?crop=entropy&cs=srgb&fm=jpg&w=800" 
+                    alt="Rodas e Pneus"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-2/3 p-6">
+                  <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Chivo, sans-serif' }}>
+                    Rodas e Pneus
+                  </h3>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-neutral-400 mb-6">
+                    <span>Jantes Especiais</span>
+                    <span>Tampões</span>
+                    <span>Pneus</span>
+                    <span>Parafusos</span>
+                  </div>
+                  <Link to="/solicitar">
+                    <Button variant="outline" className="border-neutral-600 text-white hover:border-white hover:bg-white/5 rounded-sm text-sm">
+                      Saiba Mais <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
           )}
-
-          <div className="mt-12 text-center">
-            <Link to="/loja">
-              <Button 
-                variant="outline"
-                className="border-neutral-700 text-white hover:border-white hover:bg-white/5 font-bold uppercase tracking-wider px-8 py-4 rounded-sm transition-all duration-300"
-                data-testid="ver-todas-categorias-btn"
-              >
-                Ver Todas as Categorias
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 
