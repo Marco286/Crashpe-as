@@ -227,7 +227,7 @@ const HomePage = () => {
               <div className="flex bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors">
                 <div className="w-1/3 min-h-[200px]">
                   <img 
-                    src="https://images.unsplash.com/photo-1767990495521-95cceb571125?crop=entropy&cs=srgb&fm=jpg&w=800" 
+                    src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/37yhrxgl_IMG_3290.HEIC" 
                     alt="Sistema Elétrico"
                     className="w-full h-full object-cover"
                   />
