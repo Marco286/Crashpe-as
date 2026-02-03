@@ -11,30 +11,30 @@ const CatalogoPage = () => {
   const carrosVenda = [
     {
       id: 1,
-      titulo: "BMW Série 3 E90 - Para Peças",
+      titulo: "BMW Série 3 E90",
       ano: "2008",
-      descricao: "Viatura completa para aproveitamento de peças. Motor 2.0D em bom estado.",
+      descricao: "Viatura completa para aproveitamento. Motor 2.0D em bom estado.",
       preco: "Sob consulta",
       imagem: "https://images.unsplash.com/photo-1555215695-3004980ad54e?crop=entropy&cs=srgb&fm=jpg&w=800",
-      estado: "Para Peças"
+      estado: "Disponível"
     },
     {
       id: 2,
-      titulo: "VW Golf VII - Para Peças",
+      titulo: "VW Golf VII",
       ano: "2015",
       descricao: "Golf 1.6 TDI para aproveitamento. Interior em excelente estado.",
       preco: "Sob consulta",
       imagem: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?crop=entropy&cs=srgb&fm=jpg&w=800",
-      estado: "Para Peças"
+      estado: "Disponível"
     },
     {
       id: 3,
-      titulo: "Mercedes C200 W204 - Para Peças",
+      titulo: "Mercedes C200 W204",
       ano: "2012",
       descricao: "Mercedes Classe C para aproveitamento. Caixa automática disponível.",
       preco: "Sob consulta",
       imagem: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?crop=entropy&cs=srgb&fm=jpg&w=800",
-      estado: "Para Peças"
+      estado: "Disponível"
     }
   ];
 
