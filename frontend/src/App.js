@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import HomePage from "@/pages/HomePage";
 import CatalogPage from "@/pages/CatalogPage";
+import CatalogoPage from "@/pages/CatalogoPage";
 import ProductPage from "@/pages/ProductPage";
 import RequestPartPage from "@/pages/RequestPartPage";
 import AboutPage from "@/pages/AboutPage";
@@ -19,6 +20,7 @@ function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/catalogo" element={<CatalogoPage />} />
             <Route path="/loja" element={<CatalogPage />} />
             <Route path="/loja/:category" element={<CatalogPage />} />
             <Route path="/produto/:id" element={<ProductPage />} />
