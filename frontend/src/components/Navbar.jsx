@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/", label: "Início" },
-    { href: "/solicitar", label: "Solicitar Peça" },
+    { href: "/catalogo", label: "Catálogo" },
     { href: "/sobre", label: "Sobre Nós" },
     { href: "/contactos", label: "Contactos" },
   ];
