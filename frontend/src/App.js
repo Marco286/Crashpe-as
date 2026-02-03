@@ -7,6 +7,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import HomePage from "@/pages/HomePage";
 import CatalogPage from "@/pages/CatalogPage";
 import CatalogoPage from "@/pages/CatalogoPage";
+import CarroDetalhePage from "@/pages/CarroDetalhePage";
 import ProductPage from "@/pages/ProductPage";
 import RequestPartPage from "@/pages/RequestPartPage";
 import AboutPage from "@/pages/AboutPage";
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/catalogo" element={<CatalogoPage />} />
+            <Route path="/catalogo/carro/:id" element={<CarroDetalhePage />} />
             <Route path="/loja" element={<CatalogPage />} />
             <Route path="/loja/:category" element={<CatalogPage />} />
             <Route path="/produto/:id" element={<ProductPage />} />
