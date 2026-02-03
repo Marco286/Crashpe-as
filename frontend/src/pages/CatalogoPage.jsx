@@ -136,19 +136,20 @@ const CatalogoPage = () => {
           <div className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {carrosVenda.map((carro) => (
-                <div 
+                <Link 
                   key={carro.id}
-                  className="bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors"
+                  to={`/catalogo/carro/${carro.id}`}
+                  className="bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors group"
                 >
                   <div className="aspect-[16/10] overflow-hidden">
                     <img 
                       src={carro.imagem} 
                       alt={carro.titulo}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="p-6">
-                    <Badge className="bg-amber-600/20 text-amber-400 border-amber-600/30 mb-3">
+                    <Badge className="bg-green-600/20 text-green-400 border-green-600/30 mb-3">
                       {carro.estado}
                     </Badge>
                     <h3 className="text-lg font-bold text-white mb-1" style={{ fontFamily: 'Chivo, sans-serif' }}>
@@ -158,17 +159,15 @@ const CatalogoPage = () => {
                     <p className="text-neutral-400 text-sm mb-4">{carro.descricao}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-white font-bold">{carro.preco}</span>
-                      <Link to="/contactos">
-                        <Button 
-                          variant="outline" 
-                          className="border-neutral-700 text-white hover:border-red-600 hover:bg-red-600/10 rounded-sm text-sm"
-                        >
-                          Contactar
-                        </Button>
-                      </Link>
+                      <Button 
+                        variant="outline" 
+                        className="border-neutral-700 text-white hover:border-red-600 hover:bg-red-600/10 rounded-sm text-sm"
+                      >
+                        Ver Detalhes
+                      </Button>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
             
