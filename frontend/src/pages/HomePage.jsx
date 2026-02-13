@@ -195,7 +195,7 @@ const HomePage = () => {
               <div className="flex bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors">
                 <div className="w-1/3 min-h-[200px]">
                   <img 
-                    src="https://images.unsplash.com/photo-1655103955791-aae53be125c6?crop=entropy&cs=srgb&fm=jpg&w=800" 
+                    src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/194jtvda_IMG_3801.HEIC" 
                     alt="Mecânica"
                     className="w-full h-full object-cover"
                   />
@@ -282,7 +282,7 @@ const HomePage = () => {
               <div className="flex bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors">
                 <div className="w-1/3 min-h-[200px]">
                   <img 
-                    src="https://images.unsplash.com/photo-1601368705259-87b80da6fa0c?crop=entropy&cs=srgb&fm=jpg&w=800" 
+                    src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/7fijt9by_IMG_3795.HEIC" 
                     alt="Airbags"
                     className="w-full h-full object-cover"
                   />
