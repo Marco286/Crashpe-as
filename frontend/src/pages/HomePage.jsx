@@ -282,7 +282,7 @@ const HomePage = () => {
               <div className="flex bg-[#171717] border border-neutral-800 rounded-sm overflow-hidden hover:border-red-600/50 transition-colors">
                 <div className="w-1/3 min-h-[200px]">
                   <img 
-                    src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/7fijt9by_IMG_3795.HEIC" 
+                    src="https://customer-assets.emergentagent.com/job_carpartshub-2/artifacts/8mploldc_IMG_3794.HEIC" 
                     alt="Airbags"
                     className="w-full h-full object-cover"
                   />
