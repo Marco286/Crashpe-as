@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/crashpec/public_html
+    - /bin/cp -R frontend/* $DEPLOYPATH
