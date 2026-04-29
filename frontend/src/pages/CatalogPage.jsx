@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useSearchParams, Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -89,6 +90,11 @@ const CatalogPage = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-[#0A0A0A]" data-testid="catalog-page">
+      <SEO
+        title={selectedCategory ? `${currentCategoryName} — Loja de Peças` : "Loja de Peças Automóveis"}
+        description={`Compre peças automóveis ${selectedCategory ? `de ${currentCategoryName}` : ""} novas, usadas e recondicionadas. CrashPeças em Olhos de Água, Palmela.`}
+        url={selectedCategory ? `/loja/${selectedCategory}` : "/loja"}
+      />
       {/* Header */}
       <div className="bg-[#171717] border-b border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">

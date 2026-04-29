@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,6 +13,7 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const ContactPage = () => {
   const [loading, setLoading] = useState(false);
+  const [consent, setConsent] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,6 +32,10 @@ const ContactPage = () => {
 
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       toast.error("Por favor preencha todos os campos obrigatórios");
+      return;
+    }
+    if (!consent) {
+      toast.error("Por favor aceite a política de privacidade");
       return;
     }
 
@@ -56,8 +62,8 @@ const ContactPage = () => {
         });
       }
     } catch (error) {
-      console.error("Error sending message:", error);
-      toast.error("Erro ao enviar mensagem. Tente novamente.");
+      const msg = error?.response?.data?.detail;
+      toast.error(msg || "Erro ao enviar mensagem. Tente novamente.");
     } finally {
       setLoading(false);
     }
@@ -92,6 +98,11 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-[#0A0A0A]" data-testid="contact-page">
+      <SEO
+        title="Contactos"
+        description="Entre em contacto com a CrashPeças. Rua Marquês de Pombal, Olhos de Água, Palmela. Telefone: 937 257 079. Respondemos pelo WhatsApp."
+        url="/contactos"
+      />
       {/* Header */}
       <div className="bg-[#171717] border-b border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
@@ -269,9 +280,17 @@ const ContactPage = () => {
                 />
               </div>
 
+              <div className="flex items-start gap-3">
+                <input type="checkbox" id="consent" checked={consent}
+                  onChange={e => setConsent(e.target.checked)} className="mt-1 accent-[#DC2626]" />
+                <label htmlFor="consent" className="text-neutral-400 text-sm">
+                  Concordo que os meus dados (nome, email, telefone) sejam utilizados pela CrashPeças para responder ao meu contacto, de acordo com o RGPD.
+                </label>
+              </div>
+
               <Button
                 type="submit"
-                disabled={loading}
+                disabled={loading || !consent}
                 className="w-full bg-red-600 hover:bg-red-700 text-white font-bold uppercase tracking-wider py-6 rounded-sm shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.6)] transition-all duration-300 disabled:opacity-50"
                 data-testid="contact-submit-btn"
               >

@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Target, Eye, Heart, Award, Users, Clock, ChevronRight, ArrowRight } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const AboutPage = () => {
   return (
     <div className="min-h-screen pt-20 bg-[#0A0A0A]" data-testid="about-page">
+      <SEO
+        title="Sobre Nós"
+        description="Conheça a CrashPeças, empresa especializada em peças automóveis e viaturas usadas em Olhos de Água, Palmela. Qualidade, garantia e serviço personalizado."
+        url="/sobre"
+      />
       {/* Header */}
       <div className="bg-[#171717] border-b border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">

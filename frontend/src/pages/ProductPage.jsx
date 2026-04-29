@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { ChevronRight, MessageCircle, Phone, Check, ArrowLeft } from "lucide-react";
+import { ChevronRight, MessageCircle, Phone, Check, ArrowLeft, ChevronLeft } from "lucide-react";
 import { toast } from "sonner";
 import axios from "axios";
 
@@ -16,6 +17,7 @@ const ProductPage = () => {
   const [loading, setLoading] = useState(true);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "" });
+  const [activePhoto, setActivePhoto] = useState(0);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -109,8 +111,32 @@ const ProductPage = () => {
     );
   }
 
+  const productStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "description": product.description,
+    "image": product.image_url || undefined,
+    "brand": { "@type": "Brand", "name": "CrashPeças" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": product.price || undefined,
+      "availability": product.in_stock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "seller": { "@type": "Organization", "name": "CrashPeças" }
+    }
+  };
+
   return (
     <div className="min-h-screen pt-20 bg-[#0A0A0A]" data-testid="product-page">
+      <SEO
+        title={product.name}
+        description={`${product.name} — ${product.condition}. ${product.description.slice(0, 120)}. CrashPeças, Palmela.`}
+        image={product.image_url}
+        url={`/produto/${product.id}`}
+        type="product"
+        structuredData={productStructuredData}
+      />
       {/* Header */}
       <div className="bg-[#171717] border-b border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-6">
@@ -142,18 +168,63 @@ const ProductPage = () => {
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Image */}
-          <div className="relative aspect-square bg-[#171717] rounded-sm overflow-hidden border border-neutral-800">
-            <img
-              src={product.image_url}
-              alt={product.name}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute top-4 left-4">
-              <Badge className={`${getConditionBadge(product.condition)} border text-sm font-bold uppercase tracking-wider px-4 py-2`}>
-                {product.condition}
-              </Badge>
+          {/* Image Gallery */}
+          <div>
+            <div className="relative aspect-square bg-[#171717] rounded-sm overflow-hidden border border-neutral-800 flex items-center justify-center">
+              {(() => {
+                const photos = product.images?.length > 0 ? product.images : product.image_url ? [product.image_url] : [];
+                return photos.length > 0 ? (
+                  <>
+                    <img
+                      src={photos[activePhoto]}
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                    />
+                    {photos.length > 1 && (
+                      <>
+                        <button
+                          onClick={() => setActivePhoto(i => (i - 1 + photos.length) % photos.length)}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 transition-colors">
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={() => setActivePhoto(i => (i + 1) % photos.length)}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 transition-colors">
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+                        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                          {photos.map((_, i) => (
+                            <button key={i} onClick={() => setActivePhoto(i)}
+                              className={`w-2 h-2 rounded-full transition-colors ${i === activePhoto ? "bg-white" : "bg-white/40"}`} />
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </>
+                ) : (
+                  <div className="flex flex-col items-center justify-center text-[#404040] gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                    <span className="text-sm uppercase tracking-wider">Sem imagem</span>
+                  </div>
+                );
+              })()}
+              <div className="absolute top-4 left-4">
+                <Badge className={`${getConditionBadge(product.condition)} border text-sm font-bold uppercase tracking-wider px-4 py-2`}>
+                  {product.condition}
+                </Badge>
+              </div>
             </div>
+            {/* Thumbnails */}
+            {(product.images?.length > 1) && (
+              <div className="flex gap-2 mt-3">
+                {product.images.map((img, i) => (
+                  <button key={i} onClick={() => setActivePhoto(i)}
+                    className={`w-16 h-16 overflow-hidden border-2 transition-colors ${i === activePhoto ? "border-[#DC2626]" : "border-[#262626] hover:border-[#404040]"}`}>
+                    <img src={img} alt={`foto ${i + 1}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Details */}

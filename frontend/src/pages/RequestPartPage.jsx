@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -17,6 +18,7 @@ const RequestPartPage = () => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [imagePreview, setImagePreview] = useState(null);
+  const [consent, setConsent] = useState(false);
   
   const [formData, setFormData] = useState({
     full_name: "",
@@ -99,8 +101,8 @@ const RequestPartPage = () => {
         }
       }
     } catch (error) {
-      console.error("Error submitting request:", error);
-      toast.error("Erro ao enviar pedido. Tente novamente.");
+      const msg = error?.response?.data?.detail;
+      toast.error(msg || "Erro ao enviar pedido. Tente novamente.");
     } finally {
       setLoading(false);
     }
@@ -147,6 +149,11 @@ const RequestPartPage = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-[#0A0A0A]" data-testid="request-part-page">
+      <SEO
+        title="Solicitar Peça"
+        description="Não encontrou a peça que precisa? Preencha o formulário e a CrashPeças encontra a peça certa para o seu veículo. Resposta rápida pelo WhatsApp."
+        url="/solicitar"
+      />
       {/* Header */}
       <div className="bg-[#171717] border-b border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
@@ -429,9 +436,17 @@ const RequestPartPage = () => {
           </div>
 
           {/* Submit Button */}
+          <div className="flex items-start gap-3">
+            <input type="checkbox" id="consent_req" checked={consent}
+              onChange={e => setConsent(e.target.checked)} className="mt-1 accent-[#DC2626]" />
+            <label htmlFor="consent_req" className="text-neutral-400 text-sm">
+              Concordo que os meus dados (nome, email, telefone e informações do veículo) sejam utilizados pela CrashPeças para responder ao meu pedido, de acordo com o RGPD.
+            </label>
+          </div>
+
           <Button
             type="submit"
-            disabled={loading}
+            disabled={loading || !consent}
             className="w-full bg-red-600 hover:bg-red-700 text-white font-bold uppercase tracking-wider py-6 rounded-sm shadow-[0_0_30px_rgba(220,38,38,0.4)] hover:shadow-[0_0_40px_rgba(220,38,38,0.6)] transition-all duration-300 disabled:opacity-50"
             data-testid="submit-request-btn"
           >
